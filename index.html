@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#46792a" />
+    <title>Rainbow Snake</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="game-shell" aria-label="Rainbow Snake game">
+      <header class="scorebar">
+        <div class="score-item"><span class="apple-icon" aria-hidden="true">●</span><span id="score">0</span></div>
+        <div class="score-item trophy"><span aria-hidden="true">🏆</span><span id="best">0</span></div>
+        <button id="sound-button" class="icon-button" aria-label="Turn sound on" title="Sound on/off">🔇</button>
+      </header>
+
+      <section class="game-wrap">
+        <canvas id="game" width="600" height="900" aria-label="Snake game board"></canvas>
+        <div id="overlay" class="overlay">
+          <div class="card">
+            <span class="mini-apple" aria-hidden="true">🍎</span>
+            <h1>Rainbow Snake</h1>
+            <p>Guide the rainbow snake to the apples. Do not hit the walls or yourself.</p>
+            <button id="start-button" class="primary-button">Play game</button>
+            <small>Arrow keys / WASD to move · Space to pause</small>
+          </div>
+        </div>
+      </section>
+
+      <div class="bottom-bar">
+        <span id="status">Ready to play</span>
+        <button id="pause-button" class="text-button">Pause</button>
+      </div>
+
+      <nav class="controls" aria-label="Touch controls">
+        <button data-direction="up" aria-label="Move up">▲</button>
+        <div><button data-direction="left" aria-label="Move left">◀</button><button data-direction="down" aria-label="Move down">▼</button><button data-direction="right" aria-label="Move right">▶</button></div>
+      </nav>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

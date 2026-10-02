@@ -1,0 +1,23 @@
+:root { color-scheme: dark; font-family: Arial, Helvetica, sans-serif; }
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #477a2b; color: white; }
+.game-shell { width: min(100%, 640px); padding: 0 20px 22px; }
+.scorebar { height: 126px; margin: 0 -20px 26px; padding: 25px clamp(25px, 9vw, 80px); display: flex; align-items: center; justify-content: space-between; background: #3f7027; font-size: clamp(2.1rem, 8vw, 3.6rem); }
+.score-item { display: flex; align-items: center; gap: 18px; font-weight: 400; }
+.apple-icon { position: relative; color: #ef4520; font-size: 5.2rem; line-height: .5; text-shadow: inset 0 0 0 #000; }
+.apple-icon::after { content: ""; position: absolute; width: 18px; height: 10px; border-radius: 100% 0 100% 0; background: #55c729; left: 48px; top: -11px; transform: rotate(-18deg); }
+.trophy { color: white; gap: 16px; }
+.trophy span:first-child { font-size: 3.7rem; filter: saturate(1.4); }
+.icon-button, .text-button, .controls button, .primary-button { font: inherit; cursor: pointer; border: 0; }
+.icon-button { background: transparent; color: white; font-size: 3rem; padding: 8px; }
+.game-wrap { position: relative; width: 100%; aspect-ratio: 2 / 3; border: 1px solid rgba(60, 106, 34, .55); box-shadow: 0 5px 0 rgba(35, 83, 18, .23), 0 18px 32px rgba(17, 53, 12, .18); }
+canvas { width: 100%; height: 100%; display: block; touch-action: none; }
+.overlay { position: absolute; inset: 0; display: grid; place-items: center; padding: 24px; background: rgba(44, 108, 27, .25); transition: opacity .2s; }
+.overlay.hidden { opacity: 0; pointer-events: none; }
+.card { max-width: 370px; text-align: center; padding: 26px 24px; border-radius: 23px; background: rgba(48, 104, 29, .94); box-shadow: 0 8px 22px rgba(25, 59, 14, .35); }
+.card h1 { margin: 4px 0 9px; font-size: 2.1rem; }.card p { margin: 0 0 20px; line-height: 1.45; color: #ebffe3; }.mini-apple { font-size: 2.8rem; }.card small { display: block; margin-top: 16px; color: #e5f6d9; font-size: .75rem; }
+.primary-button { padding: 12px 28px; border-radius: 999px; background: #ffbc08; color: #345c22; font-weight: bold; box-shadow: 0 3px 0 #c48600; }.primary-button:active { transform: translateY(2px); box-shadow: 0 1px 0 #c48600; }
+.bottom-bar { padding: 14px 4px 3px; display: flex; justify-content: space-between; align-items: center; color: #e9ffe0; }.text-button { color: white; background: transparent; text-decoration: underline; font-size: .95rem; }
+.controls { display: none; text-align: center; margin-top: 14px; }.controls button { width: 48px; height: 42px; margin: 2px; border-radius: 9px; background: #a8d94d; color: #386c26; font-size: 1.2rem; box-shadow: 0 2px #6eaa36; }
+button:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+@media (max-width: 640px), (pointer: coarse) { .scorebar { height: 104px; margin-bottom: 16px; }.apple-icon { font-size: 4.1rem; }.trophy span:first-child { font-size: 2.8rem; }.icon-button { font-size: 2.4rem; }.controls { display: block; } }
